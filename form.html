@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Task Form</title>
+
+    <!-- Font Awesome load -->
     <script src="https://use.fontawesome.com/690c1d89c1.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
 <!DOCTYPE html>
@@ -32,16 +34,15 @@
     
     
 <!--A container which has today's date and button-->
-    <div class=container-date style="display:flex">
+    <div class="py-10 col-md-12 text-center">
+
 <!--Button trigger 'add new task' modal-->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-    <i class="fa fa-plus">     
-    </i>
-    Add New Task
-</button>
+    <i class="fa fa-plus"></i>
+    Add New Task</button>
     </div>
   
-  <!-- Modal -->
+<!-- Modal -->
   <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -54,46 +55,57 @@
         <div class="modal-body">
           <!--A form within the modal to add the inputs-->
             <div class="modal-form">
-                <form>
-                    <div class="form-group col-md-10">
-                        <label for="exampleFormControlInput1">Task Name</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="e.g. walk the dog">
+                <form id="form-validate" novalidation>
+                    <div class="form-group col-md-10 offset-1">
+                        <label for="form-task-name">Task Name</label>
+                        <input id="form-validate-task-name" class="form-control" placeholder="e.g. walk the dog" type="text">
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Task Name needs to be 8 characters or more</div>
                     </div>
-                    <div class="form-group col-md-10">
-                        <label for="exampleFormControlInput1">Task Description:</label>
+                    <div class="form-group col-md-10 offset-1">
+                        <label for="form-task-description">Task Description:</label>
                         <!--Text area with 5 rows-->
-                        <textarea class="form-control" rows="5" id="exampleFormControlInput1" placeholder="Add task description...">
-                        </textarea>
+                        <textarea id="form-validate-task-description" class="form-control" rows="5"></textarea>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Task Description needs to be 15 characters or more</div>
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleFormControlSelect1">Assigned to</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>Jane Taas</option>
-                            <option>Nigel Quinlan</option>
-                            <option>Aaron Byrom</option>
-                            <option>Nick Matenaar</option>
-                            <option>Robin Klaus</option>
+                    <div class="form-group col-md-7 offset-1">
+                        <label for="form-assigned-to">Assigned to</label>
+                        <select id="form-validate-assigned-to" class="form-control">
+                            <option value="">Select...</option>
+                            <option value="1">Jane Taas</option>
+                            <option value="2">Nigel Quinlan</option>
+                            <option value="3">Aaron Byrom</option>
+                            <option value="4">Nick Matenaar</option>
+                            <option value="5">Robin Klaus</option>
                         </select>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please choose one option</div>
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleFormControlInput1">Due Date</label>
-                        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Add task description...">
+                    <div class="form-group col-md-7 offset-1">
+                        <label for="form-due-date">Due Date</label>
+                        <input type="date" id="form-validate-due-date" class="form-control" placeholder="DD/MM/YYYY">
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please choose a date which is today or in the future</div>
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleFormControlSelect1">Status</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                        <option>To do</option>
-                        <option>In progress</option>
-                        <option>Review</option>
-                        <option>Dome</option>
+                    <div class="form-group col-md-7 offset-1">
+                        <label for="form-status">Status</label>
+                        <select id="form-validate-status" class="form-control" >
+                        <option value ="">Select...</option>
+                        <option value ="1">To do</option>
+                        <option value ="2">In progress</option>
+                        <option value ="3">Review</option>
+                        <option value ="4">Done</option>
                         </select>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please choose one option</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="submit-button" class="btn btn-primary" type="submit">Add task</button>
                     </div>
                 </form>
             </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Add task</button>
         </div>
     </div>
 </div>
@@ -102,5 +114,18 @@
 </div>  
 </div>  
 </div>
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+<!-- End of Optional Javascript -->       
+<script src="form.js"></script>
 </body>
 </html>

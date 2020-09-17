@@ -36,6 +36,13 @@
 <!--A container which has today's date and button-->
     <div class="py-10 col-md-12 text-center">
 
+<!-- A container which has a list of all tasks -->
+    <div class="tasks-list-body" id="tasksList">
+            <p>
+<!--This is where the html from the taskHtml  -->
+            </p>
+    </div>
+
 <!--Button trigger 'add new task' modal-->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
     <i class="fa fa-plus"></i>
@@ -72,12 +79,13 @@
                     <div class="form-group col-md-7 offset-1">
                         <label for="form-assigned-to">Assigned to</label>
                         <select id="form-validate-assigned-to" class="form-control">
-                            <option value="">Select...</option>
-                            <option value="1">Jane Taas</option>
-                            <option value="2">Nigel Quinlan</option>
-                            <option value="3">Aaron Byrom</option>
-                            <option value="4">Nick Matenaar</option>
-                            <option value="5">Robin Klaus</option>
+                            <option selected>Select...</option>
+                            <option>Jane Taas</option>
+                            <option> Tash Moon</option>
+                            <option>Nigel Quinlan</option>
+                            <option>Aaron Byrom</option>
+                            <option>Nick Matenaar</option>
+                            <option>Robin Klaus</option>
                         </select>
                         <div class="valid-feedback">Looks good!</div>
                         <div class="invalid-feedback">Please choose one option</div>
@@ -91,11 +99,11 @@
                     <div class="form-group col-md-7 offset-1">
                         <label for="form-status">Status</label>
                         <select id="form-validate-status" class="form-control" >
-                        <option value ="">Select...</option>
-                        <option value ="1">To do</option>
-                        <option value ="2">In progress</option>
-                        <option value ="3">Review</option>
-                        <option value ="4">Done</option>
+                        <option selected>Select...</option>
+                        <option>To do</option>
+                        <option>In progress</option>
+                        <option>Review</option>
+                        <option>Done</option>
                         </select>
                         <div class="valid-feedback">Looks good!</div>
                         <div class="invalid-feedback">Please choose one option</div>

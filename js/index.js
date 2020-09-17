@@ -144,9 +144,10 @@ if (
     {
 // Call the TaskManager method addTask
 // format is name.method(parameters)
-    console.log(name);
     taskManager.addTask(name, description, assignedTo, date, status);
-    console.log(taskManager);
+
+// Render the html
+    taskManager.render();
 
 // Clear the form input values
 // thx to Nick, I wouldn't have thought of this
@@ -158,4 +159,5 @@ if (
     }
 });
 
-// Note = construction of TaskManager and its methodaddTask is in taskManager.js
+// Note: the construction of TaskManager and its method .addTask is in taskManager.js
+

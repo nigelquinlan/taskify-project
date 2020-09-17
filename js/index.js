@@ -156,8 +156,14 @@ if (
     select1.value = '';
     input3.value = '';
     select2.value = '';
-    }
-});
 
+// Close the modal on the successful firing of submit
+// Target and change the CSS of the staticBackdrop from display: block to none
+    
+//document.querySelector('#body').classList.remove('modal-open');
+$('#staticBackdrop').modal('toggle')
+}
+
+}); 
 // Note: the construction of TaskManager and its method .addTask is in taskManager.js
 

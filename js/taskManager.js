@@ -1,15 +1,17 @@
 // Create a createTaskHtml function with the parameters of the task inputs
 const createTaskHtml = (name, description, assignedTo, date, status) => `
-    <li class="list-group-item">
-        <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
+    <li class="list-group-item mb-3">
+        <div class="d-flex w-50 mt-2 justify-content-between align-items-center">
             <h5>${name}</h5>
             <span class="badge badge-danger">${status}</span>
         </div>
-        <div class="d-flex w-100 mb-3 justify-content-between">
+        <div class="d-flex w-50 mb-3 justify-content-between">
             <small>Assigned To: ${assignedTo}</small>
             <small>Due: ${date}</small>
         </div>
+        <div class="d-flex w-50 mb-3 justify-content-between">
         <p>${description}</p>
+        </div>
     </li>
     `
 // Create a TaskManager class - task 1

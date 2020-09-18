@@ -157,13 +157,32 @@ if (
     input3.value = '';
     select2.value = '';
 
-// Close the modal on the successful firing of submit
-// Target and change the CSS of the staticBackdrop from display: block to none
-    
-//document.querySelector('#body').classList.remove('modal-open');
-$('#staticBackdrop').modal('toggle')
+// Clear the bootstrap validation ready for next inputs
+    input1.classList.remove('is-valid');
+    input2.classList.remove('is-valid');
+    select1.classList.remove('is-valid');
+    input3.classList.remove('is-valid');
+    select2.classList.remove('is-valid');
+
+// Close the modal by toggling
+$('#staticBackdrop').modal('toggle');
 }
 
 }); 
 // Note: the construction of TaskManager and its method .addTask is in taskManager.js
+// Target tasksList id
+const tasksList = document.querySelector('#tasksList');
+// Add an event listener for button being clicked
+tasksList.addEventListener('click', (event) => {
+    event.preventDefault();
+// Check if it was a 'mark as done' button    
+    if (event.target.classList.contains('done-button')) {
+// DOM traversal to read the parent element of the task
+        const parentTask = event.target.parentElement.parentElement;
+// Get the taskId of the parent task
+        const taskId = Number(parentTask.dataset.taskId);
+        console.log(`Task Parent: ${parentTask}`);
+        console.log(`Task Id: ${taskId}`);
+    }
+});
 

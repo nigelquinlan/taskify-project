@@ -1,6 +1,16 @@
 // Task Manager initialization
 const taskManager = new TaskManager(0);
 
+// taskManager.addTask('Walk the dog', 'Bring him to the park and let him run', 'Jane Taas', '2020-10-10', 'To do');
+
+// Load any tasks if already in local storage
+taskManager.load();
+taskManager.render();
+
+// Render any tasks from local storage only if they exist
+// Don't want to do this here as it will return a null result if call render with no tasksß
+// Add it to the if statement withing load method
+
 // Select the form we want to target
 const formValidate = document.querySelector('#form-validate');
 
@@ -16,11 +26,11 @@ formValidate.addEventListener('submit', (event) => {
     const select2 = document.querySelector('#form-validate-status');
 
 // Declare variables for validation of each input as false - before they are validated
-    let input1IsValid = false;
-    let input2IsValid = false;
-    let select1IsValid = false;
-    let input3IsValid = false;
-    let select2IsValid = false;
+    let input1Validity = false;
+    let input2Validity = false;
+    let select1Validity = false;
+    let input3Validity = false;
+    let select2Validity = false;
 
 // Call the validation functions
     isValidInput1();
@@ -34,11 +44,12 @@ formValidate.addEventListener('submit', (event) => {
         if (input1.value.length > 8) {
             input1.classList.add('is-valid');
             input1.classList.remove('is-invalid');
-            input1IsValid = true;
-            console.log(input1IsValid);
+            input1Validity = true;
+            console.log('Input1 is valid: '+ input1Validity);
         } else {
             input1.classList.add('is-invalid');
             input1.classList.remove('is-valid');
+            console.log('Input1 is valid: '+ input1Validity);
         }
     };
 
@@ -47,11 +58,12 @@ formValidate.addEventListener('submit', (event) => {
         if (input2.value.length > 15) {
             input2.classList.add('is-valid');
             input2.classList.remove('is-invalid');
-            input2IsValid = true;
-            console.log(input2IsValid);
+            input2Validity = true;
+            console.log('Input2 is valid: '+ input2Validity);
         } else {
             input2.classList.add('is-invalid');
             input2.classList.remove('is-valid');
+            console.log('Input2 is valid: '+ input2Validity);
         }
     };
 
@@ -60,11 +72,12 @@ formValidate.addEventListener('submit', (event) => {
         if (select1.value !== "") {
             select1.classList.add('is-valid');
             select1.classList.remove('is-invalid');
-            select1IsValid = true;
-            console.log(select1IsValid);
+            select1Validity = true;
+            console.log('Select1 is valid: ' + select1Validity);
         } else {
             select1.classList.add('is-invalid');
             select1.classList.remove('is-valid');
+            console.log('Select1 is valid: ' + select1Validity)
         }
     };
 
@@ -91,22 +104,22 @@ formValidate.addEventListener('submit', (event) => {
             console.log('date is today');
             input3.classList.add('is-valid');
             input3.classList.remove('is-invalid');
-            input3IsValid = true;
-            console.log(input3IsValid);
+            input3Validity = true;
+            console.log('Input3 is valid: ' + input3Validity);
         }
 // Case #2 - the due date is in future
         else if (dueDate.getTime() > today.getTime()) {
                 console.log('due date is in the future');
                 input3.classList.add('is-valid');
                 input3.classList.remove('is-invalid');
-                input3IsValid = true;
-                console.log(input3IsValid);
+                input3Validity = true;
+                console.log('Input3 is valid: ' + input3Validity);
         }
 // Case #3 - the due date is in past
          else {
-            console.log('due date is in the past');
             input3.classList.add('is-invalid');
             input3.classList.remove('is-valid');
+            console.log('Input3 is valid: ' + input3Validity);
         }
     };
 
@@ -115,14 +128,14 @@ formValidate.addEventListener('submit', (event) => {
         if (select2.value !== "") {
             select2.classList.add('is-valid');
             select2.classList.remove('is-invalid');
-            select2IsValid = true;
-            console.log(select2IsValid);
+            select2Validity = true;
+            console.log('Select2 is valid: ' + select2Validity);
         } else {
             select2.classList.add('is-invalid');
             select2.classList.remove('is-valid');
+            console.log('Select2 is valid: ' + select2Validity);
         }
     };
-
 // End of validation function
 
 // Assign the values of the inputs from the form
@@ -135,19 +148,22 @@ formValidate.addEventListener('submit', (event) => {
 
 // Check if all validation is true
 if (
-    input1IsValid === true &&
-    input2IsValid === true &&
-    select1IsValid === true &&
-    input3IsValid === true &&
-    select2IsValid === true
+    input1Validity === true &&
+    input2Validity === true &&
+    select1Validity === true &&
+    input3Validity === true &&
+    select2Validity === true
     )
     {
-// Call the TaskManager method addTask
+// Call the taskManager method addTask
 // format is name.method(parameters)
     taskManager.addTask(name, description, assignedTo, date, status);
 
 // Render the html
     taskManager.render();
+
+// Call the taskManager method save    
+    taskManager.save();
 
 // Clear the form input values
 // thx to Nick, I wouldn't have thought of this
@@ -167,22 +183,50 @@ if (
 // Close the modal by toggling
 $('#staticBackdrop').modal('toggle');
 }
-
 }); 
 // Note: the construction of TaskManager and its method .addTask is in taskManager.js
+
+// Build a function for marking a task as done
 // Target tasksList id
 const tasksList = document.querySelector('#tasksList');
-// Add an event listener for button being clicked
+// Add an event listener for a button being clicked
 tasksList.addEventListener('click', (event) => {
     event.preventDefault();
-// Check if it was a 'mark as done' button    
+// Check if a 'mark as done' button was clicked   
     if (event.target.classList.contains('done-button')) {
 // DOM traversal to read the parent element of the task
         const parentTask = event.target.parentElement.parentElement;
 // Get the taskId of the parent task
         const taskId = Number(parentTask.dataset.taskId);
-        console.log(`Task Parent: ${parentTask}`);
-        console.log(`Task Id: ${taskId}`);
+// Get the task from TaskManager using the taskId
+        const task = taskManager.getTaskById(taskId);
+// Update the task status to 'Done'
+        task.status = 'Done';
+// Call the taskManager method save
+        taskManager.save();        
+// Render the tasks
+        taskManager.render();
+        console.log(`Done Task Id: ${taskId}`);
+    }
+  
+// Build a function for deleting a task
+// Check if a 'delete task' button  was clicked   
+if (event.target.classList.contains('delete-button')) {
+    // DOM traversal to read the parent element of the task
+            const parentTask = event.target.parentElement.parentElement;
+    // Get the taskId of the parent task
+            const taskId = Number(parentTask.dataset.taskId);
+    // Pass the taskId to the TaskManager delete method
+            taskManager.deleteTask(taskId);
+    // Call the taskManager method save
+            taskManager.save();        
+    // Render the tasks
+            taskManager.render();
+            console.log(`Delete Task Id: ${taskId}`);   
     }
 });
+
+
+
+
 

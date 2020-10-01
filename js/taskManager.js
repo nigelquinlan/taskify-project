@@ -130,7 +130,6 @@ class TaskManager {
 // Only one task left in the list and we want to delete this            
 //            else if (task.id === taskId && this.tasks.length === 1) {
 //           this.tasks = [];    
-            }
-        }  
-    } 
+        }
+    }  
 };

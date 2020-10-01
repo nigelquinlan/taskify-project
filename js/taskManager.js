@@ -122,10 +122,11 @@ class TaskManager {
             if(task.id !== taskId) {
             newTasks.push(task);
 // Set the value of this.tasks to newTasks - this will be an array without the deleted task
-// Need to put this expression outside the if conditional
+// Need to put this expression outside the if conditional not inside!
 //            this.tasks = newTasks;
             }
             this.tasks = newTasks;
+// If the this.tasks = newTasks is inside the if conditional then we need an else if
 // Only one task left in the list and we want to delete this            
 //            else if (task.id === taskId && this.tasks.length === 1) {
 //           this.tasks = [];    

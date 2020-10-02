@@ -117,7 +117,6 @@ class TaskManager {
         for(let i = 0; i < this.tasks.length; i++) {
 // Get the current task in the loop            
             const task = this.tasks[i];
-            console.log(task)
 // Check that the task id is not the same as the task id of the deleted task            
             if(task.id !== taskId) {
             newTasks.push(task);
@@ -129,7 +128,8 @@ class TaskManager {
 // If the this.tasks = newTasks is inside the if conditional then we need an else if
 // Only one task left in the list and we want to delete this            
 //            else if (task.id === taskId && this.tasks.length === 1) {
-//           this.tasks = [];    
+//           this.tasks = [];   
         }
+        render()
     }  
 };

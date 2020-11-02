@@ -16,6 +16,7 @@
 ## Table of contents
 * [Background](#Background)
 * [Coding goals](#Coding-goals)
+* [Tech stack](#Tech-stack)
 * [Contact](#Contact)
 
 ## Background
@@ -41,6 +42,14 @@ Nigel took on the JS by himself and is pretty proud of this first attempt at a p
 - Mark a task as done using DOM traversal
 
 
+## Tech stack
+
+- HTML5
+- CSS
+- Bootstrap 4.5.2
+- jQuery 3.5.1
+- popper.js
+- fontAwesome
 
 
 <!-- CONTACT -->

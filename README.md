@@ -39,7 +39,7 @@ Project Link: [https://github.com/nigelquinlan/taskify-project](https://github.c
 [issues-shield]: https://img.shields.io/github/issues/nigelquinlan/taskify-project.svg?style=flat-square
 [issues-url]: https://github.com/github_username/taskify-project/issues
 [license-shield]: https://img.shields.io/github/license/nigelquinlan/taskify-project.svg?style=flat-square
-[license-url]: https://github.com/nigelquinlan/taskify-project/blob/master/MIT-LICENSE.txt
+[license-url]: https://github.com/nigelquinlan/taskify-project/blob/master/LICENSE.MIT.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/nigelquinlan
 [product-screenshot]: images/screenshot.png

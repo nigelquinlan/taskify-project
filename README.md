@@ -27,7 +27,7 @@ This is a shared project between Nigel and Jane
 
 Your Name - [@twitter_handle](https://twitter.com/_nigelquinlan) - email
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/github_username/repo_name](https://github.com/nigelquinlan/taskify-project)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

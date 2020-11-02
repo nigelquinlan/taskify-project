@@ -1,23 +1,28 @@
 // Create a createTaskHtml function with the parameters of the task inputs
 const createTaskHtml = (id, name, description, assignedTo, date, status) => `
-    <li class="list-group-item w-50 mb-3" data-task-id=${id}>
-        <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
-            <h5>${name}</h5>
-            <span class="badge badge-danger">${status}</span>
+<div class="col-lg-8 col-lg-offset-2 col-sm-12" data-task-id=${id}>
+    <div class="card bg-light border-light rounded ml-5 mb-5 w-80">
+        <div class="card-body">
+            <div class="d-flex w-70 mt-2 justify-content-between align-items-center">
+                <h4 class="card-title">${name}</h4>
+                <span class="badge badge-danger">${status}</span>
+            </div>
+            <div class="d-flex w-100 mb-3 justify-content-between">
+                    <small>Assigned To: ${assignedTo}</small>
+                    <small>Due: ${date}</small>
+            </div>
+            <div class="d-flex w-100 mb-3 justify-content-between">
+                <p>${description}</p>
+            </div>
+            <div class="d-flex w-50 mb-3">
+                <button class="btn btn-outline-success done-button mr-3">Mark as done</button>
+                <button class="btn btn-outline-success delete-button mr-3 ml-3">Delete task</button>
+            </div>
         </div>
-        <div class="d-flex w-100 mb-3 justify-content-between">
-            <small>Assigned To: ${assignedTo}</small>
-            <small>Due: ${date}</small>
-        </div>
-        <div class="d-flex w-100 mb-3 justify-content-between">
-        <p>${description}</p>
-        </div>
-        <div class="d-flex w-50 mb-3 justify-content-between">
-        <button class="btn btn-outline-success done-button">Mark as done</button>
-        <button class="btn btn-outline-success delete-button">Delete task</button>
-        </div>
-    </li>
-    `
+    </div>
+</div>
+    `;
+
 // Create a TaskManager class - task 1
 class TaskManager {
     constructor(currentId = 0) {
@@ -35,7 +40,7 @@ class TaskManager {
             assignedTo: assignedTo,
             date: date,
             status: status
-        }
+        };
 // Add the task object to the tasks array
         this.tasks.push(task);
     }
@@ -70,10 +75,10 @@ class TaskManager {
 // Push the current tasks html into the tasksHtmlList
                 tasksHtmlList.push(taskHtml);
             } // End of loop 
-// Create a tasksHtml variable, set the variable to a string of html by joining each piece of html the taskHtmlList array together
+// Create a tasksHtml variable, set the variable to a string of html by joining each piece of html in the taskHtmlList array together
 // Using '\n' to put a line break between each block of html
             const tasksHtml = tasksHtmlList.join('\n');
-// Set the <p> inner html of the <div> with id=taskList in form.html
+// Set the <p> inner html of the <div> with id=taskList in index.html
             const tasksList = document.querySelector('#tasksList');
             tasksList.innerHTML = tasksHtml;
         } // End of render
@@ -98,8 +103,8 @@ class TaskManager {
             const tasksJson = localStorage.getItem('tasks');
 // Convert it to an array and store it in our TaskManager
             this.tasks = JSON.parse(tasksJson);
-//            taskManager.render();
         }
+        
 
 // Check if the currentId is saved in localStorage
 // If true
@@ -112,7 +117,6 @@ class TaskManager {
     }
 // Create a delete task method    
     deleteTask(taskId) {
-        console.log(taskId)
         const newTasks = [];
         for(let i = 0; i < this.tasks.length; i++) {
 // Get the current task in the loop            
@@ -121,15 +125,8 @@ class TaskManager {
 // Check that the task id is not the same as the task id of the deleted task            
             if(task.id !== taskId) {
             newTasks.push(task);
-// Set the value of this.tasks to newTasks - this will be an array without the deleted task
-// Need to put this expression outside the if conditional not inside!
-//            this.tasks = newTasks;
-            }
-            this.tasks = newTasks;
-// If the this.tasks = newTasks is inside the if conditional then we need an else if
-// Only one task left in the list and we want to delete this            
-//            else if (task.id === taskId && this.tasks.length === 1) {
-//           this.tasks = [];    
+            } 
         }
+        this.tasks = newTasks;
     }  
 };

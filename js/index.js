@@ -5,10 +5,12 @@ const taskManager = new TaskManager(0);
 
 // Load any tasks if already in local storage
 taskManager.load();
+
+// Render these tasks to the browser
 taskManager.render();
 
 // Render any tasks from local storage only if they exist
-// Don't want to do this here as it will return a null result if call render with no tasksß
+// Don't want to do this here as it will return a null result if call render with no tasks
 // Add it to the if statement withing load method
 
 // Select the form we want to target
@@ -195,7 +197,7 @@ tasksList.addEventListener('click', (event) => {
 // Check if a 'mark as done' button was clicked   
     if (event.target.classList.contains('done-button')) {
 // DOM traversal to read the parent element of the task
-        const parentTask = event.target.parentElement.parentElement;
+        const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
 // Get the taskId of the parent task
         const taskId = Number(parentTask.dataset.taskId);
 // Get the task from TaskManager using the taskId
@@ -213,7 +215,7 @@ tasksList.addEventListener('click', (event) => {
 // Check if a 'delete task' button  was clicked   
 if (event.target.classList.contains('delete-button')) {
     // DOM traversal to read the parent element of the task
-            const parentTask = event.target.parentElement.parentElement;
+            const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
     // Get the taskId of the parent task
             const taskId = Number(parentTask.dataset.taskId);
     // Pass the taskId to the TaskManager delete method
@@ -222,9 +224,19 @@ if (event.target.classList.contains('delete-button')) {
             taskManager.save();        
     // Render the tasks
             taskManager.render();
-            console.log(`Delete Task Id: ${taskId}`);   
-    }
-});
+    // Set a message to the browser if no tasks are present
+            if (this.tasks.length === 0) {
+                const noList = document.querySelector('#tasksList');
+                createNoListHtml = () =>
+                `<div class="d-flex w-100 mb-3 justify-content-between">
+                <h3>No tasks in your list yet</h3>
+                </div>`;
+                const noListHtml = createNoListHtml();
+                console.log(noListHtml);
+                noList.innerHTML = noListHtml;
+            }
+        }   
+    });
 
 
 

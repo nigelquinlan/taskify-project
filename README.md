@@ -23,7 +23,7 @@
 
 Done App is a simple to-do app built with HTML, CSS & JS.
 
-This was a collaborative project between Nigel Quinlan and Jane Taas as part of the Generation's Front End Web Development Bootcamp
+This was a collaborative project between Nigel Quinlan and Jane Taas as part of Generation's Front End Web Development Bootcamp
 See ##Contact below if you would like to get in touch about this app.
 
 ## Coding goals

@@ -32,11 +32,11 @@ Project Link: [https://github.com/nigelquinlan/taskify-project](https://github.c
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=flat-square
-[contributors-url]: https://github.com/nigelquinlan/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/nigelquinlan/repo.svg?style=flat-square
-[forks-url]: https://github.com/nigelquinlan/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/nigelquinlan/repo.svg?style=flat-square
-[stars-url]: https://github.com/nigelquinlan/repo/stargazers
+[contributors-url]: https://github.com/nigelquinlan/taskify-project/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/nigelquinlan/taskify-project.svg?style=flat-square
+[forks-url]: https://github.com/nigelquinlan/taskify-project/network/members
+[stars-shield]: https://img.shields.io/github/stars/nigelquinlan/taskify-project.svg?style=flat-square
+[stars-url]: https://github.com/nigelquinlan/taskify-project/stargazers
 [issues-shield]: https://img.shields.io/github/issues/nigelquinlan/repo.svg?style=flat-square
 [issues-url]: https://github.com/github_username/repo/issues
 [license-shield]: https://img.shields.io/github/license/nigelquinlan/repo.svg?style=flat-square

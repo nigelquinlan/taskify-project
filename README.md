@@ -1,4 +1,4 @@
-# taskify-project
+# DONE app
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -13,14 +13,18 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-#Done App
+## Table of contents
+* [Background](#Background)
+* [Coding goals](#Coding-goals)
+
+## Background
 
 Done App is a simple to-do app built with HTML, CSS & JS.
 
 This was a collaborative project between Nigel Quinlan and Jane Taas as part of the Generation's Front End Web Development Bootcamp
 See ##Contact below if you would like to get in touch about this app.
 
-#Coding goals
+## Coding goals
 
 This app was built to showcase our combined knowledge of HTML, CSS and JS. Nigel did the bootstrap skelelton to get the CSS working and Jane worked exclusively on the CSS to add images and styling to give the app a more coherent and custom look. Screenshots are included below
 Nigel took on the JS by himself and is pretty proud of this first attempt at a proper JS functioning app.

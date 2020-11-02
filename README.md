@@ -4,7 +4,7 @@
 *** I'm using markdown "reference style" links for readability.
 *** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
 *** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** for contributors-url, forks-url, etc.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Nigel Quinlan][contributors-shield]][contributors-url]
@@ -16,6 +16,7 @@
 ## Table of contents
 * [Background](#Background)
 * [Coding goals](#Coding-goals)
+* [Contact](#Contact)
 
 ## Background
 
@@ -29,15 +30,15 @@ See ##Contact below if you would like to get in touch about this app.
 This app was built to showcase our combined knowledge of HTML, CSS and JS. Nigel did the bootstrap skelelton to get the CSS working and Jane worked exclusively on the CSS to add images and styling to give the app a more coherent and custom look. Screenshots are included below
 Nigel took on the JS by himself and is pretty proud of this first attempt at a proper JS functioning app.
 
-Features/design considerations we had as goals included:
-Responsive design
-Clean simple UI
-Pop up form in-focus for user entry
-User entered data
-Validation on all fields of the user entered data
-Save to local storage
-Delete a task function using DOM traversal
-Mark a task as done using DOM traversal
+- Features/design considerations we had as goals included:
+- Responsive design
+- Clean simple UI
+- Pop up form in-focus for user entry
+- User entered data
+- Validation on all fields of the user entered data
+- Save to local storage
+- Delete a task function using DOM traversal
+- Mark a task as done using DOM traversal
 
 
 
@@ -46,6 +47,7 @@ Mark a task as done using DOM traversal
 ## Contact
 
 Nigel Quinlan - [@_nigelquinlan](https://twitter.com/_nigelquinlan) - nigeljquinlan@gmail.com
+
 Jane Taas - janetaas@gmail.com
 
 Project Link: [https://github.com/nigelquinlan/taskify-project](https://github.com/nigelquinlan/taskify-project)

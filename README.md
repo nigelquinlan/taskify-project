@@ -31,7 +31,7 @@ Project Link: [https://github.com/nigelquinlan/taskify-project](https://github.c
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/nigelquinlan/repo.svg?style=flat-square
 [contributors-url]: https://github.com/nigelquinlan/taskify-project/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/nigelquinlan/taskify-project.svg?style=flat-square
 [forks-url]: https://github.com/nigelquinlan/taskify-project/network/members

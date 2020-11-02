@@ -70,9 +70,9 @@ Project Link: [https://github.com/nigelquinlan/taskify-project](https://github.c
 [stars-shield]: https://img.shields.io/github/stars/nigelquinlan/taskify-project.svg?style=flat-square
 [stars-url]: https://github.com/nigelquinlan/taskify-project/stargazers
 [issues-shield]: https://img.shields.io/github/issues/nigelquinlan/taskify-project.svg?style=flat-square
-[issues-url]: https://github.com/github_username/taskify-project/issues
+[issues-url]: https://github.com/nigelquinlan/taskify-project/issues
 [license-shield]: https://img.shields.io/github/license/nigelquinlan/taskify-project.svg?style=flat-square
-[license-url]: https://github.com/nigelquinlan/taskify-project/blob/master/MIT.LICENSE
+[license-url]: https://github.com/nigelquinlan/taskify-project/blob/master/MIT
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/nigelquinlan
 [product-screenshot]: images/screenshot.png
